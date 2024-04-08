@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Box, Button, Paper, Typography } from '@mui/material';
 
-interface LoginPageProps {}
 
-const LoginPage = (props: LoginPageProps) => {
+const LoginPage = () => {
+
   return (
-    <div>LoginPage</div>
+    <div>
+      <Paper>
+        <Typography variant="h5" component="h1">Student Management</Typography>
+        <Box mt={4}>
+          <Button fullWidth variant='outlined' color='primary'>Login</Button>
+        </Box>
+      </Paper>
+    </div>
   )
 }
 
