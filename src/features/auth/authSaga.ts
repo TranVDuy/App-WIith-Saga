@@ -1,6 +1,7 @@
 import { delay, fork, take, call, put } from "redux-saga/effects";
 import { LoginPayLoad, authAction } from "./authSlice";
 import { PayloadAction } from "@reduxjs/toolkit";
+import { push } from "connected-react-router";
 
 function* handleLogin(payload: LoginPayLoad) {
     try {
@@ -9,15 +10,18 @@ function* handleLogin(payload: LoginPayLoad) {
         yield put(authAction.loginSuccess({
             id: 1,
             name: payload.userName
-        }))
+        }));
+        yield put(push("/admin"));
     } catch (error) {
         yield put(authAction.loginFailed("Login Faild"));
+        yield put(push("/login"));
     }
 };
 
 function* handleLogout() {
     yield delay(1000);
     localStorage.removeItem('access_token');
+    yield put(push("/login"));
 };
 
 function* watchLoginFlow() {
