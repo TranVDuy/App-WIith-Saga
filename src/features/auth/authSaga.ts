@@ -11,7 +11,7 @@ function* handleLogin(payload: LoginPayLoad) {
             id: 1,
             name: payload.userName
         }));
-        yield put(push("/admin"));
+        yield put(push("/admin/dashboard"));
     } catch (error) {
         yield put(authAction.loginFailed("Login Faild"));
         yield put(push("/login"));
