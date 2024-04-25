@@ -5,7 +5,6 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import {CssBaseline} from '@mui/material';
 import { history } from 'utils';
 import { ConnectedRouter } from 'connected-react-router';
 import { BrowserRouter } from 'react-router-dom';
@@ -18,7 +17,6 @@ root.render(
     <Provider store={store}>
         {/* <ConnectedRouter history={history}> */}
         <BrowserRouter>
-          <CssBaseline/>
           <App />
         </BrowserRouter>
         {/* </ConnectedRouter> */}
